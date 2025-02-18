@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 import os
 app=Flask(__name__)
-@app.route('/',methods=['POST'])
+@app.route('/webhook',methods=['POST'])
 def index():
     data=request.get_json()
     # print(data)
