@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
-# import os
+import os
 app=Flask(__name__)
 @app.route('/',methods=['POST'])
 def index():
@@ -71,4 +71,4 @@ def fetch_conversion_factor(source,target):
 
 if __name__ =="__main__":
     # port = int(os.environ.get("PORT", 5000))
-    app.run( host='0.0.0.0', port=10000)
+    app.run( host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
